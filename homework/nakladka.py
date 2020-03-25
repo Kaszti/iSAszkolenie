@@ -58,7 +58,7 @@ def main(choice):
         pies.age_d(age_h)
         another()
     elif choice == 'R' or choice == 'r':
-        r_choice_n = random.randint(0, 14)
+        r_choice_n = random.randint(1, 13)
         r_choice_S = str(r_choice_n)
         print(f'Wylosowales program o numerze: {r_choice_S}')
         main(r_choice_S)
@@ -66,6 +66,8 @@ def main(choice):
     elif choice == 'X' or choice == 'x':
         print(Fore.RED + 'Wyszedles z aplikacji.')
         sys.exit(0)
+    else:
+        error()
 def intro():
     print(Fore.WHITE + '''Wybierz program ktory chcesz uruchomic
 1) Przeliczanie C -> F
@@ -83,6 +85,11 @@ def intro():
 13) Kalkulator wieku psa
 R) Wybierz program losowo
 X) Wyjście z programu''')
+def error():
+    print('Podano bledny wybor. Wybierz poprawna opcje z listy.')
+    intro()
+    choice = input('Twoj wybor: ')
+    main(choice)
 print(Fore.BLUE + 'Witaj w Multitool Python Program by iSA - wersja B02.12321')
 intro()
 choice = input('Twoj wybor: ')

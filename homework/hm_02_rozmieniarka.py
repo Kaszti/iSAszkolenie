@@ -1,10 +1,9 @@
-value = float(input('Podaj kwote jaka chcesz rozmienic: '))
 def changer(value):
     if value % 5 == 0:
         ch_5_0 = int(value / 5)
         print(f'Liczba monet o nominale 5: {ch_5_0}')
     else:
-        ch_5_1 = int(value //5)
+        ch_5_1 = int(value // 5)
         r_5 = value % 5
         print(f'Liczba monet o nominale 5: {ch_5_1}')
         if r_5 % 2 == 0:
@@ -53,8 +52,7 @@ def changer(value):
                                     ch_002_0 = int(r_005 / 0.02)
                                     print(f'Liczba monet o nominale 0.02: {ch_002_0}')
                                     print('Liczba monet o nominale 0.01: 0')
-                                else:
+                                elif r_005 % 0.02 != 0 :
                                     ch_002_1 = int(r_005 // 0.02)
                                     print(f'Liczba monet o nominale 0.02: {ch_002_1}')
                                     print('Liczba monet o nominale 0.01: 1')
-changer(value)

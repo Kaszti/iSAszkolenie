@@ -1,9 +1,12 @@
-import sys
 import hm_01 as hm
+import hm_02_rozmieniarka as rozmieniarka
+import hm_02_piramida as pir
+import hm_02_pies as pies
+
 def another():
     question = input('Czy wykonac inny program (tak/nie)? ')
     if question == 'nie':
-            sys.exit('Wyszedles z aplikacji.')
+        print('Wyszedles z aplikacji.')
     elif question == 'tak':
         main()
 def main():
@@ -29,5 +32,45 @@ def main():
         hm.cf()
         another()
     elif choice == '2':
-
+        hm.fc()
+        another()
+    elif choice == '3':
+        hm.pk()
+        another()
+    elif choice == '4':
+        hm.pioc()
+        another()
+    elif choice == '5':
+        hm.prostokat()
+        another()
+    elif choice == '6':
+        hm.bd()
+        another()
+    elif choice == '7':
+        hm.parity()
+        another()
+    elif choice == '8':
+        hm.p357()
+        another()
+    elif choice == '9':
+        hm.p3i5i7()
+        another()
+    elif choice == '10':
+        hm.yearp()
+        another()
+    elif choice == '11':
+        value = float(input('Podaj kwote jaka chcesz rozmienic: '))
+        rozmieniarka.changer(value)
+        another()
+    elif choice == '12':
+        pir.piramida()
+        another()
+    elif choice == '13':
+        age_h = float(input('Podaj wiek psa w latach ludzkich: '))
+        pies.age_d(age_h)
+        another()
+    elif choice == 'R' or choice == 'r':
+        pass
+    elif choice == 'X' or choice == 'x':
+        print('Wyszedles z aplikacji.')
 main()

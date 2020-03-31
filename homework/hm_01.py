@@ -1,9 +1,13 @@
 # Przeliczanie Celsjusza na Fahrenheita
 def cf():
-    tc = input('Podaj temperaturę w stopniach celsjusza: ')
-    tf = (9/5)*float(tc)+32
-    print('TF = (9/5)*TC+32')
-    print('Temperatura w stopniach Fahrenheita jest równa: ' + str(tf))
+    try:
+        tc = input('Podaj temperaturę w stopniach celsjusza: ')
+        tf = (9 / 5) * float(tc) + 32
+        print('TF = (9/5)*TC+32')
+        print('Temperatura w stopniach Fahrenheita jest równa: ' + str(tf))
+    except:
+        print('Podaj liczbę.')
+        cf()
 
 
 #Stopnie Fahrenheita na Celsjusza

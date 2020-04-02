@@ -47,15 +47,13 @@ def main(choice):
         hm.yearp()
         another()
     elif choice == '11':
-        value = float(input('Podaj kwote jaka chcesz rozmienic: '))
-        rozmieniarka.changer(value)
+        rozmieniarka.changer()
         another()
     elif choice == '12':
         pir.piramida()
         another()
     elif choice == '13':
-        age_h = float(input('Podaj wiek psa w latach ludzkich: '))
-        pies.age_d(age_h)
+        pies.age_d()
         another()
     elif choice == 'R' or choice == 'r':
         r_choice_n = random.randint(1, 13)

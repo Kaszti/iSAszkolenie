@@ -10,9 +10,23 @@ def menu(programs):
     print(Fore.BLUE + 'Witaj w Multitool Python - wersja 2.01')
     for key, program in programs.items():
         print(f'{key} - {program["name"]}')
-
-    return input('Który program uruchomić? ').upper()
-
+def another():
+    question = input('Czy wykonac inny program (tak/nie)? ')
+    if question == 'nie':
+        print(Fore.RED + 'Wyszedles z aplikacji.')
+        sys.exit(0)
+    elif question == 'tak':
+        menu(programs)
+        choice = input('Twoj wybor: ')
+        main(choice)
+def leave():
+    print(Fore.RED + 'Wyszedles z aplikacji.')
+    sys.exit(0)
+def random_program():
+    r_choice_n = random.randint(1, 13)
+    r_choice_S = str(r_choice_n)
+    print(f'Wylosowales program o numerze: {r_choice_S}')
+    main(r_choice_S)
 programs = {
     '1' : {'name': 'Przeliczanie C -> F', 'function': hm.cf},
     '2' : {'name': 'Przeliczanie F -> C', 'function': hm.fc},
@@ -27,17 +41,16 @@ programs = {
     '11' : {'name': 'Rozmieniarka', 'function': rozmieniarka.changer},
     '12' : {'name': 'Rysowanie piramidy', 'function': pir.piramida},
     '13' : {'name': 'Kalkulator wieku psa', 'function': pies.age_d},
-    'R' : {'name': 'Wyjście z programu', 'function': wyjscie},
-    'X' : {'name': 'Wyjście z programu', 'function': wyjscie},
+    'R' : {'name': 'Wyjście z programu', 'function': random_program},
+    'X' : {'name': 'Wyjście z programu', 'function': leave},
 }
-wybor = None
-
-while wybor != 'X':
-    wybor = menu(programy)
-
+def main(choice):
     try:
-        print('=' * 20)
-        programy[wybor]['function']()
-        print('=' * 20)
+        programs[choice]['function']()
+        another()
     except KeyError:
         print('Taki program nie isnieje')
+        another()
+menu(programs)
+choice = input('Twoj wybor: ')
+main(choice)

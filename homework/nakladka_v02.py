@@ -2,6 +2,7 @@ import hm_01 as hm
 import hm_02_rozmieniarka as rozmieniarka
 import hm_02_piramida as pir
 import hm_02_pies as pies
+import my_modules.hungry_python_isa as hungry_python
 import random
 import sys
 from colorama import Fore
@@ -41,6 +42,7 @@ programs = {
     '11' : {'name': 'Rozmieniarka', 'function': rozmieniarka.changer},
     '12' : {'name': 'Rysowanie piramidy', 'function': pir.piramida},
     '13' : {'name': 'Kalkulator wieku psa', 'function': pies.age_d},
+    '14' : {'name': 'Hungry python game', 'function': hungry_python.game_loop},
     'R' : {'name': 'Wyjście z programu', 'function': random_program},
     'X' : {'name': 'Wyjście z programu', 'function': leave},
 }

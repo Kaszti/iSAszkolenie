@@ -23,6 +23,7 @@
 # print(list_5)
 # list_5[1] = 'jeden'
 # print(list_5)
+# print(list_5)
 # list_3.append('nowy')
 # print(list_3)
 # del(list_3[0])

@@ -1,4 +1,4 @@
-import hm_01 as hm
+from homework import hm_01 as hm
 import hm_02_rozmieniarka as rozmieniarka
 import hm_02_piramida as pir
 import hm_02_pies as pies
